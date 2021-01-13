@@ -18,7 +18,7 @@ class Rooms(APIView):
 
 class Dialog(APIView):
     """Диалог чата, сообщение"""
-    permission_classes = [permissions.AllowAny, ]
+    permission_classes = [permissions.IsAuthenticated, ]
 
     def get(self, request):
         room = request.GET.get("room")
