@@ -1,4 +1,4 @@
-<template class="a">
+<template>
     <mu-container>
         <mu-appbar style="width: 100%;" color="primary">
             Чат на vue js
@@ -55,10 +55,5 @@
 </script>
 
 <style scoped>
-    .a {
 
-        background-color: #3366CC; /* Цвет фона веб-страницы */
-
-
-    }
 </style>

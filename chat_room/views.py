@@ -30,7 +30,7 @@ class Dialog(APIView):
         dialog = ChatPostSerializers(data=request.data)
         if dialog.is_valid():
             dialog.save(user=request.user)
-            return Response({'status': 'Message sent'})
+            return Response(status=201)
         else:
-            return Response({'status': "Your message has not been sent"})
+            return Response(status=400)
 

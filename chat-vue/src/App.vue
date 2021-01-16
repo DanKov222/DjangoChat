@@ -11,6 +11,9 @@
 </script>
 
 <style>
+    body {
+        background-color: #d5ffff;
+    }
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;

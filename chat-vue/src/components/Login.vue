@@ -1,13 +1,12 @@
 <template>
     <div>
-        <input v-model="login" placeholder="Логин" type="text">
-        <input v-model="password" placeholder="Пароль" type="password">
-        <button @click="setLogin">Войти</button><br>
+        <input v-model="login" placeholder="Логин" type="text"><br>
+        <input v-model="password" placeholder="Пароль" type="password"><br>
+        <button style="margin-top: 5px" @click="setLogin">Войти</button><br>
     </div>
 </template>
 
 <script>
-    import $ from 'jquery'
 
     export default {
         name: "Login",
@@ -44,5 +43,4 @@
 </script>
 
 <style scoped>
-
 </style>
