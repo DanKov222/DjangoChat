@@ -1,7 +1,7 @@
 <template>
     <mu-col span="4" xl="2" class="room-list">
         <div v-for="room in rooms">
-            <h3 @click="openDialog(room.id)">{{ room.creator.username}}</h3>
+            <h3 @click="openDialog(room.id)" @dblclick="openDialog(room.id)">{{ room.creator.username}}</h3>
             <small>{{ room.date }}</small>
         </div>
     </mu-col>
@@ -33,6 +33,7 @@
                 })
             },
             openDialog(id) {
+                this.visible = false
                 this.$emit('openDialog', id)
             }
         }
@@ -43,6 +44,7 @@
     h3 {
         cursor: pointer;
     }
+
     .room-list {
         box-shadow: 1px 4px 5px #999999;
         margin-right: 10px;

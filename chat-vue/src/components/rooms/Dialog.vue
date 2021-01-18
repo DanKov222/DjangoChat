@@ -18,6 +18,7 @@
                                :rows="4"
                                placeholder="Your message">
                 </mu-text-field>
+                <mu-button round color="red" @click="update">hide</mu-button>
                 <mu-button class="button" round color="teal" @click="sendMessage">Send</mu-button>
             </mu-row>
         </mu-container>
@@ -26,7 +27,6 @@
 </template>
 
 <script>
-
     export default {
         name: "Dialog",
         props: {
@@ -35,6 +35,7 @@
         data() {
             return {
                 dialogs: '',
+                seen: true,
                 form: {
                     textarea: '',
                 }
@@ -77,6 +78,9 @@
                         alert(response.statusText)
                     }
                 })
+            },
+            update() {
+                window.location = '/'
             }
         }
     }
