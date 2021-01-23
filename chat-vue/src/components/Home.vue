@@ -4,6 +4,7 @@
             Чат на vue js
             <mu-button flat slot="right" v-if="!auth" @click="goLogin">Вход</mu-button>
             <mu-button flat slot="right" v-else @click="logout">Выход</mu-button>
+            <mu-button flat slot="right" v-if="!auth" @click="goRegister">Зарегистрироваться</mu-button>
         </mu-appbar>
 
         <mu-row>
@@ -21,7 +22,7 @@
         name: "Home",
         components: {
             Room,
-            Dialog
+            Dialog,
         },
         data() {
             return {
@@ -49,6 +50,9 @@
             openDialog(id) {
                 this.dialog.id = id
                 this.dialog.show = true
+            },
+            goRegister() {
+                this.$router.push({name: 'register'})
             }
         },
     }

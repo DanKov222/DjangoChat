@@ -1,15 +1,14 @@
 <template>
     <mu-col span="8" xl="9">
-
         <mu-container class="dialog">
+            <AddUsers :room="id"></AddUsers>
             <mu-row v-for="dialog in dialogs" direction="column" justify-content="start"
                     align-items="end">
                 <p><strong>{{ dialog.user.username }}</strong></p>
                 <p>{{ dialog.text }}</p>
-                <span>{{ dialog.date }}</span>
+                <span class="line">{{ dialog.date }}</span>
             </mu-row>
         </mu-container>
-
         <mu-container>
             <mu-row>
                 <mu-text-field v-model="form.textarea"
@@ -27,10 +26,15 @@
 </template>
 
 <script>
+    import AddUsers from "./AddUsers";
+
     export default {
         name: "Dialog",
         props: {
             id: '',
+        },
+        components: {
+            AddUsers
         },
         data() {
             return {
@@ -38,7 +42,7 @@
                 seen: true,
                 form: {
                     textarea: '',
-                }
+                },
             }
         },
         created() {
@@ -48,7 +52,7 @@
             this.loadDialog()
             setInterval(() => {
                 this.loadDialog()
-            }, 5000)
+            }, 2500);
         },
         methods: {
             loadDialog() {
@@ -91,8 +95,13 @@
         border: 1px solid #300;
         margin-top: 20px;
     }
+
     .button {
         margin-left: auto;
         margin-right: 10px;
+    }
+
+    .line {
+        box-shadow: 0px 1px 0px #000000;
     }
 </style>

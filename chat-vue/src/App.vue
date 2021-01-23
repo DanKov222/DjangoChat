@@ -12,7 +12,7 @@
 
 <style>
     body {
-        background-color: #d5ffff;
+        background-color: #e6ffff;
     }
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
