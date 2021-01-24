@@ -1,6 +1,7 @@
 <template>
     <div>
         <input v-model="login" placeholder="Логин" type="text"><br>
+        <input v-model="email" placeholder="Email" type="email"><br>
         <input v-model="password" placeholder="Пароль" type="password"><br>
         <button style="margin-top: 5px" @click="register">Зарегистрироваться на сайте</button>
         <br>
@@ -14,6 +15,7 @@
             return {
                 login: '',
                 password: '',
+                email: ''
             }
         },
         methods: {
@@ -24,7 +26,8 @@
                     type: 'POST',
                     data: {
                         username: this.login,
-                        password: this.password
+                        password: this.password,
+                        email: this.email
                     },
                     success: (response) => {
                         this.getToken()
@@ -46,7 +49,7 @@
                         password: this.password
                     },
                     success: (response) => {
-                        alert("Добро пожаловать")
+                        alert("Отлично! Теперь выполните вход на сайт")
                         this.$router.push({name: "home"})
                     },
                     error: (response) => {

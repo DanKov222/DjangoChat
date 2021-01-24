@@ -11,13 +11,13 @@
         </mu-container>
         <mu-container>
             <mu-row>
-                <mu-text-field v-model="form.textarea"
+                <mu-text-field id="textInput" v-model="form.textarea"
                                full-width
                                multi-line
                                :rows="4"
                                placeholder="Your message">
                 </mu-text-field>
-                <mu-button round color="red" @click="update">hide</mu-button>
+                <mu-button round color="red" @click="update">Hide</mu-button>
                 <mu-button class="button" round color="teal" @click="sendMessage">Send</mu-button>
             </mu-row>
         </mu-container>
@@ -77,6 +77,7 @@
                     },
                     success: (response) => {
                         this.loadDialog()
+                        this.form.textarea = ''
                     },
                     error: (response) => {
                         alert(response.statusText)

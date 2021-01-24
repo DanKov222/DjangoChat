@@ -1,6 +1,6 @@
 <template>
     <mu-container>
-        <mu-appbar style="width: 100%;" color="#28aaaa">
+        <mu-appbar style="width: 100%;" color="#5aaaaa">
             Чат на vue js
             <mu-button flat slot="right" v-if="!auth" @click="goLogin">Вход</mu-button>
             <mu-button flat slot="right" v-else @click="logout">Выход</mu-button>
@@ -60,6 +60,6 @@
 
 <style scoped>
     body{
-        color: #28aaaa;
+        color: #25aaaa;
     }
 </style>
