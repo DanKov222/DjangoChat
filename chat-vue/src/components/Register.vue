@@ -2,7 +2,7 @@
     <div>
         <input v-model="login" placeholder="Логин" type="text"><br>
         <input v-model="password" placeholder="Пароль" type="password"><br>
-        <button style="margin-top: 5px" @click="register">Зарегаться1</button>
+        <button style="margin-top: 5px" @click="register">Зарегистрироваться на сайте</button>
         <br>
     </div>
 </template>
@@ -27,6 +27,7 @@
                         password: this.password
                     },
                     success: (response) => {
+                        this.getToken()
                     },
                     error: (response) => {
                         if (response.status === 400) {
@@ -35,6 +36,8 @@
                         console.log(response)
                     }
                 })
+            },
+            getToken() {
                 $.ajax({
                     url: 'http://127.0.0.1:8000/auth/token/login/',
                     type: 'POST',
@@ -51,10 +54,9 @@
                             alert("Что-то не так:( Свяжитесь с администрацией сайта и сообщите ей об данной ошибке")
                         }
                         console.log(response)
-                        console.log(this.login)
                     }
                 })
-            },
+            }
         }
     }
 </script>
