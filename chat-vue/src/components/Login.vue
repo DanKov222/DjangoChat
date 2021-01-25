@@ -1,9 +1,14 @@
 <template>
-    <div>
-        <input v-model="login" placeholder="Логин" type="text"><br>
-        <input v-model="password" placeholder="Пароль" type="password"><br>
-        <button style="margin-top: 5px" @click="setLogin">Войти</button><br>
-    </div>
+    <mu-col xl="12" class="room-list">
+    <mu-container>
+        <mu-text-field v-model="login" label="Логин"
+                       help-text=""></mu-text-field>
+        <br/>
+        <mu-text-field v-model="password" label="Пароль" :type="visibility ? 'text' : 'password'">
+        </mu-text-field><br/>
+        <mu-button round @click="setLogin" color="#af5fc4">Войти</mu-button>
+    </mu-container>
+    </mu-col>
 </template>
 
 <script>
@@ -31,7 +36,7 @@
                         this.$router.push({name: "home"})
                     },
                     error: (response) => {
-                        if (response.status === 400){
+                        if (response.status === 400) {
                             alert("Логин или пароль не верны")
                         }
                         console.log(response)

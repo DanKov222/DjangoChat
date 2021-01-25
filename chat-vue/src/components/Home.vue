@@ -1,7 +1,7 @@
 <template>
     <mu-container>
         <mu-appbar style="width: 100%;" color="#5aaaaa">
-            Чат на vue js
+            Чат на DjangoVue
             <mu-button flat slot="right" v-if="!auth" @click="goLogin">Вход</mu-button>
             <mu-button flat slot="right" v-else @click="logout">Выход</mu-button>
             <mu-button flat slot="right" v-if="!auth" @click="goRegister">Зарегистрироваться</mu-button>
@@ -59,7 +59,4 @@
 </script>
 
 <style scoped>
-    body{
-        color: #25aaaa;
-    }
 </style>
