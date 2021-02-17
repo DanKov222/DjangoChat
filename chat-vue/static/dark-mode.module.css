@@ -1,0 +1,16 @@
+* {
+    font-family: 'Segoe UI';
+}
+
+body {
+    background: rgb(29, 29, 29);
+    transition: 1s;
+}
+
+button {
+    background-color: white;
+}
+
+button:hover {
+    background: rgb(45, 50, 102);
+}
