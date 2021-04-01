@@ -1,5 +1,4 @@
 <template>
-    <HomeSlot>
         <mu-col span="4" xl="2" class="room-list">
             <mu-button @click="addRoom">Create Room</mu-button>
             <div v-for="room in rooms">
@@ -7,7 +6,6 @@
                 <small>{{ room.date }}</small>
             </div>
         </mu-col>
-    </HomeSlot>
 </template>
 
 <script>
