@@ -1,14 +1,15 @@
 <template>
-    <mu-col span="4" xl="2" class="room-list">
-        <mu-button @click="addRoom">Create Room</mu-button>
-        <div v-for="room in rooms">
-            <h3 @click="openDialog(room.id)" @dblclick="openDialog(room.id)">{{ room.creator.username}}</h3>
-            <small>{{ room.date }}</small>
-        </div>
-    </mu-col>
+        <mu-col span="4" xl="2" class="room-list">
+            <mu-button @click="addRoom">Create Room</mu-button>
+            <div v-for="room in rooms">
+                <h3 @click="openDialog(room.id)" @dblclick="openDialog(room.id)">{{ room.creator.username}}</h3>
+                <small>{{ room.date }}</small>
+            </div>
+        </mu-col>
 </template>
 
 <script>
+    import HomeSlot from '../Home'
 
     export default {
         name: "Room",
