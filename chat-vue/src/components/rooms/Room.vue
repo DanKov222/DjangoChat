@@ -22,6 +22,9 @@
                 headers: {'Authorization': "Token " + sessionStorage.getItem('auth_token')},
             });
             this.loadRoom()
+            setInterval(() => {
+                this.loadRoom()
+            }, 3500);
         },
         methods: {
             loadRoom() {

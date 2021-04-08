@@ -5,17 +5,21 @@
             <mu-row v-for="dialog in dialogs" direction="column" justify-content="start"
                     align-items="end">
                 <p><strong>{{ dialog.user.username }}</strong></p>
-                <p>{{ dialog.text }}</p>
+                <p style="white-space: pre-line;">{{ dialog.text }}</p>
                 <span class="line">{{ dialog.date }}</span>
             </mu-row>
         </mu-container>
         <mu-container>
+
             <mu-row>
                 <mu-text-field id="textInput" v-model="form.textarea"
                                full-width
                                multi-line
                                :rows="4"
-                               placeholder="Your message">
+                               placeholder="Your message
+enter - отправить сообщение; ctrl+shift - перенос строки"
+                               @keyup.ctrl.native='br' or
+                               @keyup.enter.native='sendMessage'>
                 </mu-text-field>
                 <mu-button round color="red" @click="update">Hide</mu-button>
                 <mu-button class="button" round color="teal" @click="sendMessage">Send</mu-button>
@@ -86,6 +90,9 @@
             },
             update() {
                 window.location = '/'
+            },
+            br() {
+                this.form.textarea += '\n'
             }
         }
     }
@@ -104,5 +111,9 @@
 
     .line {
         box-shadow: 0px 1px 0px #000000;
+    }
+
+    #inf {
+      color: gray;
     }
 </style>
